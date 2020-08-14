@@ -1,0 +1,15 @@
+{
+  "name": "/profession_test",
+  "authors": [
+    {
+      "name": "Jaroslav Lezhenko",
+      "email": "jarwork884@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "ProfessionTest\\": "src/"
+    }
+  }
+}
