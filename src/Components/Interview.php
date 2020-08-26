@@ -1,12 +1,10 @@
 <?php
 
-
 namespace ProfessionTest\Components;
 
-use ProfessionTest\Components\Contracts\ComponentInterface;
+use ProfessionTest\Components\Contracts\CompositInterface;
 
-
-class Interview implements ComponentInterface
+class Interview extends CompositInterface
 {
 
 }
