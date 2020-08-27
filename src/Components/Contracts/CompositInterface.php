@@ -2,27 +2,48 @@
 
 namespace ProfessionTest\Components\Contracts;
 
+use IteratorInterface\InterviewIterator;
+
 abstract class CompositInterface extends ComponentInterface
 {
-    protected \SplObjectStorage $children;
+    /**
+     * @var InterviewIterator;
+     */
+    protected InterviewIterator $children;
 
+    /**
+     * @var array
+     */
+    private $components = [];
+
+    /**
+     * CompositInterface constructor.
+     */
     public function __construct()
     {
-        $this->children = new \SplObjectStorage();
+        $this->children = new InterviewIterator($this);
     }
 
-    public function add(ComponentInterface $component): void
+    /**
+     * @param ComponentInterface $component
+     */
+    public function addComponent(ComponentInterface $component): void
     {
-        $this->children->attach($component);
-        $component->setParent($this);
+        $this->components[] = $component;
     }
 
-    public function remove(ComponentInterface $component): void
+    /**
+     * @return array $components
+     */
+
+    public function getComponent()
     {
-        $this->children->detach($component);
-        $component->setParent(null);
+        return $this->components;
     }
 
+    /**
+     * @return bool
+     */
     public function isComposite(): bool
     {
         return true;
