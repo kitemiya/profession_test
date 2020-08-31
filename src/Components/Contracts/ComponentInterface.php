@@ -7,7 +7,7 @@ abstract class ComponentInterface
     /**
      * @var ComponentInterface
      */
-    protected ComponentInterface $parent;
+    protected $parent;
 
     /**
      * @return ComponentInterface

@@ -9,7 +9,7 @@ abstract class CompositInterface extends ComponentInterface
     /**
      * @var InterviewIterator;
      */
-    protected InterviewIterator $children;
+    protected $children;
 
     /**
      * @var array

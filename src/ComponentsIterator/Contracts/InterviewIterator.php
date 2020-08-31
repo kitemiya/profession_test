@@ -9,12 +9,12 @@ class InterviewIterator implements \Iterator
     /**
      * @var ComponentInterface
      */
-    private ComponentInterface $question;
+    private $question;
 
     /**
      * @var int
      */
-    private int $position = 0;
+    private $position = 0;
 
     public function __construct($question)
     {

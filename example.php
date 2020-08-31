@@ -1,22 +1,13 @@
 <?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+require_once('./vendor/autoload.php');
 
-require_once('Test.php');
+use ProfessionTest\Components\Interview;
 
-class ExampleController
-{
-    private $testing;
+$interview = new Interview('123');
 
-    public function __construct(
-        Test $testing
-    ) {
-        $this->testing = $testing;
-    }
+$question = $interview->addQuestion('WTF???');
 
-    public function interview() {
-        $interview = new Test('Вопрос №1', 'Первый вариант ответа.');
-        $question1 = $interview->createQuestion('Вопрос №1');
-        $question1->createAnswerVariant('Первый вариант ответа.');
-
-        return $interview;
-    }
-}
+print_r($interview);
