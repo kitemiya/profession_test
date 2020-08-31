@@ -1,8 +1,6 @@
 <?php
 
-
-namespace IteratorInterface;
-
+namespace ProfessionTest\ComponentsIterator\Contracts;
 
 use ProfessionTest\Components\Contracts\ComponentInterface;
 

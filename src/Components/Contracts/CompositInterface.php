@@ -2,7 +2,7 @@
 
 namespace ProfessionTest\Components\Contracts;
 
-use IteratorInterface\InterviewIterator;
+use \ProfessionTest\ComponentsIterator\Contracts\InterviewIterator;
 
 abstract class CompositInterface extends ComponentInterface
 {
