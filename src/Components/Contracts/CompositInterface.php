@@ -2,43 +2,31 @@
 
 namespace ProfessionTest\Components\Contracts;
 
-use \ProfessionTest\ComponentsIterator\Contracts\InterviewIterator;
+use ProfessionTest\ComponentsIterator\Contracts\AbstractIterator;
 
 abstract class CompositInterface extends ComponentInterface
 {
     /**
-     * @var InterviewIterator;
+     * @var AbstractIterator;
      */
     protected $children;
 
     /**
      * @var array
      */
-    private $components = [];
+    private $component;
 
     /**
      * CompositInterface constructor.
      */
     public function __construct()
     {
-        $this->children = new InterviewIterator($this);
+
     }
 
-    /**
-     * @param ComponentInterface $component
-     */
-    public function addComponent(ComponentInterface $component): void
+    public function getParent(): ComponentInterface
     {
-        $this->components[] = $component;
-    }
-
-    /**
-     * @return array $components
-     */
-
-    public function getComponent()
-    {
-        return $this->components;
+        return $this;
     }
 
     /**

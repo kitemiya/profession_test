@@ -9,6 +9,15 @@ abstract class ComponentInterface
      */
     protected $parent;
 
+    public function __construct()
+    {
+    }
+
+    public function setParent(ComponentInterface $parent): void
+    {
+        $this->parent = $parent;
+    }
+
     /**
      * @return ComponentInterface
      */
@@ -16,6 +25,11 @@ abstract class ComponentInterface
     {
         return $this->parent;
     }
+
+    /**
+     * @param ComponentInterface $component
+     */
+    abstract public function addComponent(ComponentInterface $component);
 
     /**
      * @return bool

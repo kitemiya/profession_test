@@ -3,13 +3,10 @@
 namespace ProfessionTest\Components;
 
 use ProfessionTest\Components\Contracts\CompositInterface;
+use ProfessionTest\ComponentsIterator\InterviewIterator;
 
 class Interview extends CompositInterface
 {
-    /**
-     * @var Question
-     */
-    public $question;
 
     /**
      * @var string
@@ -23,14 +20,17 @@ class Interview extends CompositInterface
     {
         parent::__construct();
         $this->title = $title;
+        $this->children = new InterviewIterator($this);
     }
 
     /**
-     * @param string $question
-     * @return Question|string
+     * @param $question
      */
-    public function addQuestion(string $question)
+    public function addComponent($question)
     {
-        return $this->question = $question;
+        $this->children->add($question);
+        $question->setParent($this);
+        return $this->children;
     }
+
 }
