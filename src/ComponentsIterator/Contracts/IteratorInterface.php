@@ -2,14 +2,14 @@
 
 namespace ProfessionTest\ComponentsIterator\Contracts;
 
-use ProfessionTest\Components\Contracts\ComponentInterface;
+use ProfessionTest\Components\Contracts\AbstractComponent;
 
 interface IteratorInterface
 {
-    public function __construct(ComponentInterface $component);
+    public function add(AbstractComponent $component);
 
-    public function add(ComponentInterface $component);
+    public function remove(AbstractComponent $component);
 
-    public function remove(ComponentInterface $component);
+    public function get(AbstractComponent $component);
 
 }

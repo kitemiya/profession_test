@@ -2,9 +2,9 @@
 
 namespace ProfessionTest\Components;
 
-use ProfessionTest\Components\Contracts\CompositInterface;
+use ProfessionTest\Components\Contracts\AbstractComposite;
 
-class Interview extends CompositInterface
+class Interview extends AbstractComposite
 {
 
     /**
