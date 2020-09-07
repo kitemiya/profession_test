@@ -4,9 +4,9 @@ namespace ProfessionTest\ComponentsIterator\Contracts;
 
 use ProfessionTest\Components\Contracts\ComponentInterface;
 
-interface InterfaceIterator
+interface IteratorInterface
 {
-    public function __construct($component);
+    public function __construct(ComponentInterface $component);
 
     public function add(ComponentInterface $component);
 
