@@ -25,6 +25,6 @@ class Question extends CompositInterface
     {
         $this->children->add($answer);
         $answer->setParent($this);
-        return $this->children;
+        return $answer;
     }
 }

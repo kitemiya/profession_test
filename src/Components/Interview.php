@@ -3,7 +3,6 @@
 namespace ProfessionTest\Components;
 
 use ProfessionTest\Components\Contracts\CompositInterface;
-use ProfessionTest\ComponentsIterator\InterviewIterator;
 
 class Interview extends CompositInterface
 {
@@ -20,7 +19,7 @@ class Interview extends CompositInterface
     {
         parent::__construct();
         $this->title = $title;
-        $this->children = new InterviewIterator($this);
+
     }
 
     /**
@@ -30,7 +29,7 @@ class Interview extends CompositInterface
     {
         $this->children->add($question);
         $question->setParent($this);
-        return $this->children;
+        return $question;
     }
 
 }

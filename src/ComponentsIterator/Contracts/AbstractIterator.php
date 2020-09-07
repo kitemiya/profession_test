@@ -4,11 +4,32 @@ namespace ProfessionTest\ComponentsIterator\Contracts;
 
 use ProfessionTest\Components\Contracts\ComponentInterface;
 
-abstract class AbstractIterator implements InterfaceIterator
+class AbstractIterator implements InterfaceIterator
 {
-    abstract public function __construct($component);
+    /**
+     * @var ComponentInterface
+     */
+    private $component;
 
-    abstract public function add(ComponentInterface $component);
+    /**
+     * @var int
+     */
+    private $position = 0;
 
-    abstract public function remove(ComponentInterface $component);
+    public function __construct($component)
+    {
+        $this->component[$this->position] = $component;
+    }
+
+    public function add($component)
+    {
+        $this->position = $this->position +1;
+        $this->component[$this->position] = $component;
+        return $this->component[$this->position];
+    }
+
+    public function remove(ComponentInterface $component)
+    {
+        $this->component[$this->position] = null;
+    }
 }

@@ -21,7 +21,8 @@ abstract class CompositInterface extends ComponentInterface
      */
     public function __construct()
     {
-
+        parent::__construct();
+        $this->children = new AbstractIterator($this);
     }
 
     public function getParent(): ComponentInterface

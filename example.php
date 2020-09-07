@@ -14,4 +14,13 @@ $question1 = $interview->addComponent(new Question('Вопрос1'));
 $question2 = $interview->addComponent(new Question('Вопрос2'));
 $question3 = $interview->addComponent(new Question('Вопрос3'));
 
+$answer1 = $question1->addComponent(new AnswerVariant('Ответ1'));
+$answer2 = $question1->addComponent(new AnswerVariant('Ответ2'));
+$answer3 = $question1->addComponent(new AnswerVariant('Ответ3'));
+
+$answer1->addComponent('1балл');
+$answer2->addComponent('2балл');
+$answer3->addComponent('3балл');
+
+
 print_r($interview->getParent());

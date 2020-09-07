@@ -2,6 +2,8 @@
 
 namespace ProfessionTest\Components\Contracts;
 
+use ProfessionTest\ComponentsIterator\Contracts\AbstractIterator;
+
 abstract class ComponentInterface
 {
     /**
@@ -15,7 +17,7 @@ abstract class ComponentInterface
 
     public function setParent(ComponentInterface $parent): void
     {
-        $this->parent = $parent;
+        $this->parent = new AbstractIterator($this);
     }
 
     /**

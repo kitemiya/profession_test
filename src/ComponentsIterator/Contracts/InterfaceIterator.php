@@ -6,7 +6,7 @@ use ProfessionTest\Components\Contracts\ComponentInterface;
 
 interface InterfaceIterator
 {
-    public function __construct($question);
+    public function __construct($component);
 
     public function add(ComponentInterface $component);
 
