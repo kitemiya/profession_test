@@ -2,15 +2,15 @@
 
 namespace ProfessionTest\Components;
 
-use ProfessionTest\Components\Contracts\CompositInterface;
+use ProfessionTest\Components\Contracts\AbstractComponent;
+use ProfessionTest\Components\Contracts\AbstractComposite;
 
-class Question extends CompositInterface
+class Question extends AbstractComposite
 {
-
     /**
      * @var string
      */
-    public $title;
+    public string $title;
 
     /**
      * @param string $title
@@ -21,10 +21,9 @@ class Question extends CompositInterface
         $this->title = $title;
     }
 
-    public function addComponent($answer)
+
+    public function addComponent(AbstractComponent $component)
     {
-        $this->children->add($answer);
-        $answer->setParent($this);
-        return $answer;
+        // TODO: Implement addComponent() method.
     }
 }

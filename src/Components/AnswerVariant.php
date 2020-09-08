@@ -1,28 +1,40 @@
 <?php
 
 namespace ProfessionTest\Components;
+use ProfessionTest\Components\Contracts\AbstractComponent;
 
-use ProfessionTest\Components\Contracts\ComponentInterface;
-
-class AnswerVariant extends ComponentInterface
+class AnswerVariant extends AbstractComponent
 {
 
     /**
      * @var int
      */
-    public $point;
+    public int $point;
+
+    protected bool $selected;
 
     /**
      * @param int $point
      */
-    public function __construct(string $point)
+    public function __construct(int $point)
     {
         parent::__construct();
         $this->point = $point;
     }
 
-    public function addComponent($point)
+    /**
+     * @return bool
+     */
+    public function isSelected(): bool
     {
-        $this->parent->add($point);
+        return $this->selected;
+    }
+
+    /**
+     * @param bool $selected
+     */
+    public function setSelected(bool $selected): void
+    {
+        $this->selected = $selected;
     }
 }
