@@ -7,23 +7,23 @@ use ProfessionTest\Components\Contracts\AbstractComposite;
 
 class Question extends AbstractComposite
 {
-    /**
-     * @var string
-     */
-    public string $title;
 
     /**
      * @param string $title
      */
     public function __construct(string $title)
     {
-        parent::__construct();
-        $this->title = $title;
+        parent::__construct($title);
     }
 
-
-    public function addComponent(AbstractComponent $component)
+    /**
+     * @param AbstractComponent $answer
+     * @return AbstractComponent
+     */
+    public function addComponent($answer)
     {
-        // TODO: Implement addComponent() method.
+        $this->children->add($answer);
+        $answer->setParent($this);
+        return $answer;
     }
 }

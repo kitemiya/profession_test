@@ -9,13 +9,29 @@ abstract class AbstractComponent
      */
     protected AbstractComposite $parent;
 
+    /**
+     * @var string
+     */
     public string $id;
 
-    public function __construct()
+    /**
+     * @var string
+     */
+    public string $title;
+
+    /**
+     * AbstractComponent constructor.
+     * @param string $title
+     */
+    public function __construct(string $title)
     {
         $this->id = uniqid();
+        $this->title = $title;
     }
 
+    /**
+     * @param AbstractComposite $parent
+     */
     public function setParent(AbstractComposite $parent): void
     {
         $this->parent = $parent;

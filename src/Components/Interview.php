@@ -6,24 +6,18 @@ use ProfessionTest\Components\Contracts\AbstractComposite;
 
 class Interview extends AbstractComposite
 {
-
-    /**
-     * @var string
-     */
-    public $title;
-
     /**
      * @param string $title
      */
     public function __construct(string $title)
     {
-        parent::__construct();
-        $this->title = $title;
+        parent::__construct($title);
 
     }
 
     /**
      * @param $question
+     * @return Contracts\AbstractComponent
      */
     public function addComponent($question)
     {

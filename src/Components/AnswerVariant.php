@@ -7,18 +7,22 @@ class AnswerVariant extends AbstractComponent
 {
 
     /**
-     * @var int
+     * @var string
      */
-    public int $point;
+    public string $point;
 
+    /**
+     * @var bool
+     */
     protected bool $selected;
 
     /**
-     * @param int $point
+     * @param string $title
+     * @param string $point
      */
-    public function __construct(int $point)
+    public function __construct(string $title, string $point)
     {
-        parent::__construct();
+        parent::__construct($title);
         $this->point = $point;
     }
 

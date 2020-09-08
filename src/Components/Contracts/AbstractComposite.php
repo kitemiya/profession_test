@@ -14,13 +14,17 @@ abstract class AbstractComposite extends AbstractComponent
 
     /**
      * AbstractComposite constructor.
+     * @param string $title
      */
-    public function __construct()
+    public function __construct(string $title)
     {
-        parent::__construct();
+        parent::__construct($title);
         $this->children = new ConcreteIterator();
     }
 
+    /**
+     * @return $this
+     */
     public function getParent(): self
     {
         return $this;
