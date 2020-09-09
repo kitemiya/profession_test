@@ -4,18 +4,18 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 require_once('./vendor/autoload.php');
 
-use ProfessionTest\Components\Interview;
-use ProfessionTest\Components\Question;
-use ProfessionTest\Components\AnswerVariant;
+use \ProfessionTest\InterviewBuilder\ConcreteBuilder;
 
-$interview = new Interview('123');
+$interview = new ConcreteBuilder('Профессиональный тест');
 
-$question1 = $interview->addComponent(new Question('Вопрос1'));
-$question2 = $interview->addComponent(new Question('Вопрос2'));
-$question3 = $interview->addComponent(new Question('Вопрос3'));
+$interview->createQuestion('Вопрос 1');
 
-$answer1 = $question1->addComponent(new AnswerVariant('Ответ1', '1'));
-$answer2 = $question1->addComponent(new AnswerVariant('Ответ2', '3'));
-$answer3 = $question1->addComponent(new AnswerVariant('Ответ3', '2'));
+$interview->createAnswer('Ответ 1', '5');
+$interview->createAnswer('Ответ 2', '1');
 
-print_r($interview->getParent());
+$interview->createQuestion('Вопрос 2');
+
+$interview->createAnswer('Ответ 3', '1');
+$interview->createAnswer('Ответ 4', '5');
+
+print_r($interview);
