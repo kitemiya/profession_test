@@ -1,0 +1,19 @@
+{
+  "name": "vendor_name/infrastructure",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "nobody",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ProfessionTest\\": "domain/"
+    }
+  },
+  "require": {
+  }
+}

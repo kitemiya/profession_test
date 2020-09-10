@@ -11,7 +11,6 @@ abstract class AbstractComposite extends AbstractComponent
      * @var AbstractIterator;
      */
     protected AbstractIterator $children;
-
     /**
      * AbstractComposite constructor.
      * @param string $title

@@ -26,4 +26,5 @@ class Question extends AbstractComposite
         $answer->setParent($this);
         return $answer;
     }
+
 }
