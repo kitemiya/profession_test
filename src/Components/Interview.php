@@ -15,15 +15,4 @@ class Interview extends AbstractComposite
 
     }
 
-    /**
-     * @param $question
-     * @return Contracts\AbstractComponent
-     */
-    public function addComponent($question)
-    {
-        $this->children->add($question);
-        $question->setParent($this);
-        return $question;
-    }
-
-}
+ }
