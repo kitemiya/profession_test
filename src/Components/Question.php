@@ -2,7 +2,6 @@
 
 namespace ProfessionTest\Components;
 
-use ProfessionTest\Components\Contracts\AbstractComponent;
 use ProfessionTest\Components\Contracts\AbstractComposite;
 
 class Question extends AbstractComposite
@@ -16,14 +15,4 @@ class Question extends AbstractComposite
         parent::__construct($title);
     }
 
-    /**
-     * @param AbstractComponent $answer
-     * @return AbstractComponent
-     */
-    public function addComponent($answer)
-    {
-        $this->children->add($answer);
-        $answer->setParent($this);
-        return $answer;
-    }
 }

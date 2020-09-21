@@ -40,9 +40,12 @@ abstract class AbstractComposite extends AbstractComponent
 
     /**
      * @param AbstractComponent $component
-     * Этот метод только в AbstractComposite!
-     * Обрати внимание, что Все они компоненты. Есть простые, а есть Составные :)
-     * Вот метод проверяющий isComposite? Мы им проверяем, имеет ли право объект иметь детей :)
+     * @return AbstractComponent
      */
-    abstract public function addComponent(AbstractComponent $component);
+    public function addComponent(AbstractComponent $component)
+    {
+        $this->children->add($component);
+        $component->setParent($this);
+        return $component;
+    }
 }
