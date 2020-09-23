@@ -17,10 +17,10 @@ class Builder extends InterviewBuilder
         return $this;
     }
 
-    public function addQuestion(Question $composite)
+    public function addQuestion(Question $question)
     {
         $this->composite = self::$memory;
-        return parent::addQuestion($composite);
+        return parent::addQuestion($question);
     }
 
 }

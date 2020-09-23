@@ -41,3 +41,4 @@ $interview = InterviewBuilder::create(new Interview('Interview 1'))
     ->addAnswerVariant(new AnswerVariant('AnsV 3', 5))
     ->done();
 ;
+//var_dump($interview);
